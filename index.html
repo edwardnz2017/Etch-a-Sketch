@@ -1,0 +1,77 @@
+<html>
+    <head>
+        <title>Etch a Sketch</title>
+    </head>
+    <style>
+        body {
+            text-align: center;
+        }
+        button {
+            width: 160px;
+            height: 30px;
+            margin: 0 8px 15px 0;
+            border-radius: 0;
+        }
+        button:hover {
+            transform: scale(1.1);
+        }
+        .row {
+            display: block;
+        }
+        .box {
+            display: flex;
+            background: white;
+            border: solid black 0.1px;
+            clear: both;
+        }
+        .parent {
+            height: 600px;
+            width: 600px;
+            border: solid black 2px;
+            margin: 0 auto; 
+            display: flex;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 1);
+        } 
+
+    </style>
+    <body>
+        <h1>Etch-a-Sketch!</h1>
+
+        <button onclick="makeGrid()" class="makeGridButton">Clear/Make new grid</button>
+
+        <div class="parent"> 
+        </div>
+
+        <script>
+            const gridDiv = document.querySelector(".parent");
+
+            function makeGrid() {
+                clearText();
+                const x = prompt("How big should we make the grid? (1-100) ");
+                for (let i = 0; i < x; i++) {
+                    let row = document.createElement("div");
+                    row.classList.add("row");
+                    for (let j = 0; j < x; j++) {
+                        let box = document.createElement("div");
+                        box.classList.add("box");
+                        box.addEventListener("mouseover", function () {
+                            box.style.backgroundColor = "black";
+                        });
+                        let boxWidth = (600/x - 1) + "px";
+                        let boxHeight = (600/x - 1) + "px";
+                        box.style.minHeight = boxHeight;
+                        box.style.minWidth = boxWidth;
+                        row.appendChild(box);
+                    }
+                    gridDiv.appendChild(row);
+                }
+            }
+
+            function clearText() { 
+                gridDiv.textContent = "";
+            };
+
+            makeGrid();
+        </script>
+    </body>
+</html>
