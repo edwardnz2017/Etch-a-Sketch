@@ -21,7 +21,6 @@
         .box {
             display: flex;
             background: white;
-            border: solid black 0.1px;
             clear: both;
         }
         .parent {
@@ -57,8 +56,8 @@
                         box.addEventListener("mouseover", function () {
                             box.style.backgroundColor = "black";
                         });
-                        let boxWidth = (600/x - 1) + "px";
-                        let boxHeight = (600/x - 1) + "px";
+                        let boxWidth = (600/x) + "px";
+                        let boxHeight = (600/x) + "px";
                         box.style.minHeight = boxHeight;
                         box.style.minWidth = boxWidth;
                         row.appendChild(box);
