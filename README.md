@@ -1,4 +1,4 @@
-This a simple Etch-A-Sketch. You can set the grid from 1 to 100. 
-Simply move your mouse to color in the boxes.
+This a simple Etch-A-Sketch. You can set the grid from 1 to 100 depending on how big you want the squares to be.
 
-Made on Safari.
+Simply move your mouse over the pad to color in the boxes.
+
